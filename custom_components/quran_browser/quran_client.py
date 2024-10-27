@@ -1,5 +1,7 @@
 from typing import Any, Dict, List
 
+from aiohttp import ClientSession, ClientResponseError
+
 from .const import BASE_API_URL, LOGGER, ENDPOINT_CHAPTERS, ENDPOINT_AUDIO_FILES
 
 
