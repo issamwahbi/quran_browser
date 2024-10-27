@@ -1,6 +1,7 @@
 {
     "domain": "quran_browser",
     "name": "Quran Browser",
+    "version": "0.1.0",
     "codeowners": ["@issamwahbi"],
     "config_flow": true,
     "documentation": "https://github.com/issamwahbi/quran_browser",
