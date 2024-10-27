@@ -1,0 +1,11 @@
+{
+    "domain": "quran_browser",
+    "name": "Quran Browser",
+    "codeowners": ["@issamwahbi"],
+    "config_flow": true,
+    "documentation": "https://github.com/issamwahbi/quran_browser",
+    "integration_type": "service",
+    "iot_class": "cloud_polling",
+    "requirements": ["requests"],
+    "single_config_entry": true
+  }
