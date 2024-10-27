@@ -73,7 +73,7 @@ class QuranMediaSource(MediaSource):
             can_play=False,
             can_expand=True,
             children=[
-                *await self._async_build_chapters(chapters),
+                *self._async_build_chapters(chapters),
             ],
         )
 
