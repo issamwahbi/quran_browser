@@ -62,7 +62,6 @@ class QuranMediaSource(MediaSource):
         """Return media."""
         quranClient = self.quranClient
         chapters = await quranClient.fetch_chapters()
-        LOGGER.warning(chapters)   
 
         return BrowseMediaSource(
             domain=DOMAIN,
