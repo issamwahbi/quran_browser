@@ -16,7 +16,7 @@ from homeassistant.core import HomeAssistant, callback
 
 from .quran_client import QuranClient
 from . import QuranBrowserConfigEntry
-from .const import DOMAIN
+from .const import DOMAIN, LOGGER
 
 
 async def async_get_media_source(hass: HomeAssistant) -> QuranMediaSource:
@@ -62,6 +62,7 @@ class QuranMediaSource(MediaSource):
         """Return media."""
         quranClient = self.quranClient
         chapters = await quranClient.fetch_chapters()
+        LOGGER.warning(chapters)   
 
         return BrowseMediaSource(
             domain=DOMAIN,
