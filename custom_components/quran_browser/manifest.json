@@ -6,6 +6,6 @@
     "documentation": "https://github.com/issamwahbi/quran_browser",
     "integration_type": "service",
     "iot_class": "cloud_polling",
-    "requirements": ["requests"],
+    "requirements": [],
     "single_config_entry": true
   }
