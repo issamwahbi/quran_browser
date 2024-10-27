@@ -2,7 +2,7 @@ from typing import Any, Dict, List
 
 from aiohttp import ClientSession, ClientResponseError
 
-from .const import BASE_API_URL, LOGGER, ENDPOINT_CHAPTERS, ENDPOINT_AUDIO_FILES
+from .const import BASE_API_URL, LOGGER, ENDPOINT_CHAPTERS, ENDPOINT_AUDIO_FILES, ENDPOINT_GET_CHAPTER
 
 
 class QuranClientError(Exception):
@@ -19,7 +19,7 @@ class QuranClient:
 
     async def fetch_chapter(self, reciter_id: int, chapter_id: int) -> Dict[str, Any]:
         """Fetches a single Quran chapter by ID."""
-        url = f"{BASE_API_URL}{ENDPOINT_CHAPTERS}/{reciter_id}/{chapter_id}"
+        url = f"{BASE_API_URL}{ENDPOINT_GET_CHAPTER}/{reciter_id}/{chapter_id}"
         headers = {"User-Agent": self._user_agent}
 
         try:
