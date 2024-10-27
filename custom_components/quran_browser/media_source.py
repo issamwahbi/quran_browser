@@ -53,7 +53,7 @@ class QuranMediaSource(MediaSource):
         if not chapter:
             raise Unresolvable("Quran chapter not found")
 
-        return PlayMedia(chapter.audio_url, "audio/mpeg")
+        return PlayMedia(chapter["audio_url"], "audio/mpeg")
 
     async def async_browse_media(
         self,
