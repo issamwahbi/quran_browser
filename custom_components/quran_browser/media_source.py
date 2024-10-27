@@ -73,13 +73,13 @@ class QuranMediaSource(MediaSource):
             can_play=False,
             can_expand=True,
             children=[
-                *await self._async_build_chapters(quranClient, chapters),
+                *await self._async_build_chapters(chapters),
             ],
         )
 
     @callback
     def _async_build_chapters(
-        self, quranClient: QuranClient, chapters: List[Dict[str, Any]]
+        self, chapters: List[Dict[str, Any]]
     ) -> list[BrowseMediaSource]:
         """Build list of media sources from radio stations."""
         items: list[BrowseMediaSource] = []
@@ -88,10 +88,10 @@ class QuranMediaSource(MediaSource):
             items.append(
                 BrowseMediaSource(
                     domain=DOMAIN,
-                    identifier=chapter.id,
+                    identifier=chapter["id"],
                     media_class=MediaClass.MUSIC,
                     media_content_type="MUSIC",
-                    title=chapter.name_simple,
+                    title=chapter["name_simple"],
                     can_play=True,
                     can_expand=False,
                 )
